@@ -11,8 +11,3 @@ def login(request, *args, **kwargs):
     return render(request, 'userauth/login.html')
 
 
-def about(request):
-    return render(request, 'userauth/about.html')
-
-def contact(request):
-    return render(request, 'userauth/contact.html')
