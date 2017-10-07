@@ -16,7 +16,11 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+
 from userauth.views import index, auth_return
+
+from dashboard.views import dashboard
+
 
 urlpatterns = [
     url(r'^$', index),
@@ -33,4 +37,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^userauth/', include('userauth.urls')),
     url(r'^home/', include('home.urls')),
+    url(r'^dashboard/', dashboard, name='dashboard'),
+
 ]
