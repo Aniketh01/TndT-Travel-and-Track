@@ -1,5 +1,0 @@
-
-
-urlpatterns = [
-    url(r'^join/', ),
-]
