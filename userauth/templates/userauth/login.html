@@ -37,7 +37,9 @@
       </div>
     </div>
     <div class='login_fields__submit'>
-      <input type='submit' value='Log In with Google+'>
+      <input type='submit' value='Log In with Google+' onclick="function python() {
+
+      }">
     </div>
 
   </div>
@@ -58,5 +60,8 @@
 
     <script  src="{% static 'userauth/js/index.js' %}"></script>
 
+<script>
+    $.ajax({ type: "POST", url: "~/quickstart.py", data: { param: text} }).done(function python( o ) {  });
+</script>
 </body>
 </html>
