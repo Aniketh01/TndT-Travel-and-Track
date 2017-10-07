@@ -10,3 +10,5 @@ from django.shortcuts import render
 def home(request, *args, **kwargs):
     return render(request, 'home/index.html')
 
+def about(request):
+    return render(request, 'userauth/about.html')
