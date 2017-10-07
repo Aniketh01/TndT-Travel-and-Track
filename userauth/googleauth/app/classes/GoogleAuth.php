@@ -14,4 +14,7 @@ class GoogleAuth {
 
 		}
 	}
+	public function logout() {
+		unset($_SESSION['access_token']);
+	}
 }
