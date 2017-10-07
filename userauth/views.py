@@ -12,7 +12,7 @@ def login(request, *args, **kwargs):
 
 
 def about(request):
-    return render(request, 'home/about.html')
+    return render(request, 'userauth/about.html')
 
 def contact(request):
-    return render(request, 'home/contact.html')
+    return render(request, 'userauth/contact.html')
