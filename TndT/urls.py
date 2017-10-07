@@ -16,7 +16,20 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 
+from userauth.views import index, auth_return
+
 urlpatterns = [
+    url(r'^$', index),
+    url(r'^oauth2callback', auth_return),
+
+    # Uncomment the admin/doc line below and add 'django.contrib.admindocs'
+    # to INSTALLED_APPS to enable admin documentation:
+    # (r'^admin/doc/', include('django.contrib.admindocs.urls')),
+
+    # Uncomment the next line to enable the admin:
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login',
+     {'template_name': 'plus/login.html'}),
+
     url(r'^admin/', admin.site.urls),
     url(r'^userauth/', include('userauth.urls')),
     url(r'^home/', include('home.urls')),

@@ -128,3 +128,5 @@ LOGIN_REDIRECT_URL = '/'
 MEDIA_URL = '/static/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/media/')
+
+GOOGLE_OAUTH2_CLIENT_SECRETS_JSON = 'client_secrets.json'
