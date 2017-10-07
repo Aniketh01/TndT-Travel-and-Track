@@ -5,6 +5,6 @@ from userauth.views import login, about, contact
 urlpatterns = [
     url(r'^$', login, name="login"),
 
-    url(r'^about/', about),
-    url(r'^about/', contact),
+#    url(r'^about/', about),
+ #   url(r'^about/', contact),
 ]
