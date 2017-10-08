@@ -1,13 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-#
-# Official OpenSky Network API client implementation
-#
-# Author: Markus Fuchs <fuchs@opensky-network.org>
-# URL:    http://github.com/openskynetwork/opensky-api
-#
-# Dependencies: requests (http://docs.python-requests.org/)
-#
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or

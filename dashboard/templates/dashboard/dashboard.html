@@ -54,7 +54,7 @@
                 </li>
 
                   <li>
-                  <a href="widget.html" >
+                  <a href="/home" >
                     <span class="nav-icon">
                       <i class="material-icons">&#xe8d2;
                         <span ui-include="{% static 'dashboard/assets/images/i_3.svg' %}"></span>
@@ -218,7 +218,7 @@
 	          </div>
 	          <div class="clear">
 	            <h4 class="m-a-0 text-lg _300"><a href>Status: <span class="text-sm"></span></a></h4>
-	            <small class="text-muted">6 new arrivals.</small>
+	            <small class="text-muted">Status of your flight.</small>
 	          </div>
 	        </div>
 	    </div>
@@ -231,7 +231,7 @@
 	          </div>
 	          <div class="clear">
 	            <h4 class="m-a-0 text-lg _300"><a href>Departure: <span class="text-sm"></span></a></h4>
-	            <small class="text-muted">38 open.</small>
+	            <small class="text-muted">Departure time.</small>
 	          </div>
 	        </div>
 	    </div>
@@ -244,7 +244,7 @@
 	          </div>
 	          <div class="clear">
 	            <h4 class="m-a-0 text-lg _300"><a href>Expected time to leave:<span class="text-sm"></span></a></h4>
-	            <small class="text-muted">632 vips.</small>
+	            <small class="text-muted">Expected to leave soon.</small>
 	          </div>
 	        </div>
 	    </div>
@@ -303,15 +303,6 @@
 		        </thead>
 		        <tbody>
 		          <tr>
-		            <td>
-		              <div ui-jp="sparkline" ui-refresh="app.setting.color" ui-options="[ 16,15,15,14,17,18,16,15,16 ], {type:'bar', height:19, barWidth:4, barSpacing:2, barColor:'#0cc2aa'}" class="sparkline inline">loading...</div>
-		            </td>
-		            <td>App downloads</td>
-		            <td class="text-success">
-		              <i class="fa fa-level-up"></i> 40%
-		            </td>
-		          </tr>
-		          <tr>
 		            <td class="text-center">
 		              <div ui-jp="sparkline" ui-refresh="app.setting.color" ui-options="[ 60,30,10 ], {type:'pie', height:19, sliceColors:['#fcc100','#fff','#0cc2aa']}" class="sparkline inline">loading...</div>
 		            </td>
@@ -325,24 +316,6 @@
 		              <div ui-jp="sparkline" ui-refresh="app.setting.color" ui-options="[ 16,15,15,14,17,18,16,15,16 ], {type:'line', height:19, width:60, lineColor:'#0cc2aa', fillColor:'transparent'}" class="sparkline inline">loading...</div>
 		            </td>
 		            <td>Revenue</td>
-		            <td class="text-warning">
-		              <i class="fa fa-level-down"></i> 5%
-		            </td>
-		          </tr>
-		          <tr>                    
-		            <td>
-		              <div ui-jp="sparkline" ui-refresh="app.setting.color" ui-options="[ 16,15,15,14,17,18,16,15,16 ], {type:'discrete', height:19, width:60, lineColor:'#6cc788'}" class="sparkline inline">loading...</div>
-		            </td>
-		            <td>Customer increase</td>
-		            <td class="text-danger">
-		              <i class="fa fa-level-down"></i> 20%
-		            </td>
-		          </tr>
-		          <tr>                    
-		            <td>
-		              <div ui-jp="sparkline" ui-refresh="app.setting.color" ui-options="[ 16,15,15,14,17,18,16,15,16 ], {type:'line', height:19, width:60, lineColor:'#fcc100', fillColor:'#fcc100'}" class="sparkline inline">loading...</div>
-		            </td>
-		            <td>Order placed</td>
 		            <td class="text-warning">
 		              <i class="fa fa-level-down"></i> 5%
 		            </td>
