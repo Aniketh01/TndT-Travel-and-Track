@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^userauth/', include('userauth.urls')),
     url(r'^home/', include('home.urls')),
+    url(r'^$', include('home.urls')),
     url(r'^dashboard/', dashboard, name='dashboard'),
 
 ]
