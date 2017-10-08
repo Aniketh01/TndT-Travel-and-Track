@@ -47,94 +47,48 @@
   </head>
   <body>
     <div id="floating-panel">
-      <input id="latlng" type="text" placeholder="Enter the latitude, longtitude">
+      <input id="latlng" type="text" value="40.714224,-73.961452">
       <input id="submit" type="button" value="Reverse Geocode">
     </div>
     <div id="map"></div>
     <script>
       function initMap() {
-    var map = new google.maps.Map(document.getElementById('map'), {
+        var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 8,
-                   center: {lat: 40.731, lng: -73.997}
-                });
+          center: {lat: 40.731, lng: -73.997}
+        });
         var geocoder = new google.maps.Geocoder;
         var infowindow = new google.maps.InfoWindow;
-
-        var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
-        var mapOptions = {
-                          zoom: 4,
-                          center: myLatlng
-                          }
-        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
-
-        var marker = new google.maps.Marker({
-                                              position: myLatlng,
-                                              map: map,
-                                              draggable:true,
-                                              title:"Drag me!"
-        });
-
-        marker.setMap(map);
-
-        var myLatlng1 = new google.maps.LatLng(-10.363882,131.044922);
-        var mapOptions1 = {
-                          zoom: 4,
-                          center: myLatlng1
-                          }
-        var map1 = new google.maps.Map(document.getElementById("map"), mapOptions1);
-
-        var marker = new google.maps.Marker({
-                                              position: myLatlng1,
-                                              map: map1,
-                                              draggable:true,
-                                              title:"Drag me!"
-        });
-
-        marker.setMap(map1);
-
 
         document.getElementById('submit').addEventListener('click', function() {
           geocodeLatLng(geocoder, map, infowindow);
 
-
-        });
-          var myLatLng = {lat: -25.363, lng: 131.044};
-          var beaches = [
-          [12.8278, 100.9592]
-          [38.9342, 100.5762]
-          [13.3962, 151.1048]
-          [-32.6617, -121.0536]
-          [13.025, 100.3345]
+      var beaches = [
+          ['first', 12.8278, 100.9592, 4]
+          ['second', 38.9342, 100.5762, 5]
+          ['', 13.3962, 151.1048, 3]
+          ['', -32.6617, -121.0536, 2]
+          ['', 13.025, 100.3345, 1]
 
       ]
-
-  var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 4,
-    center: myLatLng
-  });
-for(var i =0;i < beaches.length; i++) {
+        });
+      }
+      function setMarkers() {
+          for(var i =0;i < beaches.length; i++) {
               var beach = beaches[i];
-               var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 8,
-                   center: {lat: beach[0], lng: beach[1]}
-                });
               var marker = new google.maps.Marker({
-                  postion: {lat: beach[0], lng:beach[1]},
+                  postion: {lat: beach[1], lng:beach[2]},
                   map:map,
                   icon: image,
                   shape:shape,
-
+                  title: beach[0],
+                  zIndex: beach[3]
               });
               marker.setMap(map);
           }
-  var marker = new google.maps.Marker({
-    position: myLatLng,
-    map: map,
-    title: 'Hello World!'
-  });
-}
+         
 
-
+      }
       function geocodeLatLng(geocoder, map, infowindow) {
         var input = document.getElementById('latlng').value;
         var latlngStr = input.split(',', 2);
