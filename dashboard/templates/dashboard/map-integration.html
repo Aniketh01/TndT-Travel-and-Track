@@ -60,6 +60,39 @@
         var geocoder = new google.maps.Geocoder;
         var infowindow = new google.maps.InfoWindow;
 
+        var myLatlng = new google.maps.LatLng(-25.363882,131.044922);
+        var mapOptions = {
+                          zoom: 4,
+                          center: myLatlng
+                          }
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+        var marker = new google.maps.Marker({
+                                              position: myLatlng,
+                                              map: map,
+                                              draggable:true,
+                                              title:"Drag me!"
+        });
+
+        marker.setMap(map);
+
+        var myLatlng1 = new google.maps.LatLng(-10.363882,131.044922);
+        var mapOptions1 = {
+                          zoom: 4,
+                          center: myLatlng1
+                          }
+        var map1 = new google.maps.Map(document.getElementById("map"), mapOptions1);
+
+        var marker = new google.maps.Marker({
+                                              position: myLatlng1,
+                                              map: map1,
+                                              draggable:true,
+                                              title:"Drag me!"
+        });
+
+        marker.setMap(map1);
+
+
         document.getElementById('submit').addEventListener('click', function() {
           geocodeLatLng(geocoder, map, infowindow);
         });
