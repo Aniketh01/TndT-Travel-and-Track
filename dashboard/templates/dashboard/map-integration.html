@@ -53,17 +53,54 @@
     <div id="map"></div>
     <script>
       function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
+    var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 8,
-          center: {lat: 40.731, lng: -73.997}
-        });
+                   center: {lat: 40.731, lng: -73.997}
+                });
         var geocoder = new google.maps.Geocoder;
         var infowindow = new google.maps.InfoWindow;
 
         document.getElementById('submit').addEventListener('click', function() {
           geocodeLatLng(geocoder, map, infowindow);
+
+
         });
-      }
+          var myLatLng = {lat: -25.363, lng: 131.044};
+          var beaches = [
+          [12.8278, 100.9592]
+          [38.9342, 100.5762]
+          [13.3962, 151.1048]
+          [-32.6617, -121.0536]
+          [13.025, 100.3345]
+
+      ]
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 4,
+    center: myLatLng
+  });
+for(var i =0;i < beaches.length; i++) {
+              var beach = beaches[i];
+               var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+                   center: {lat: beach[0], lng: beach[1]}
+                });
+              var marker = new google.maps.Marker({
+                  postion: {lat: beach[0], lng:beach[1]},
+                  map:map,
+                  icon: image,
+                  shape:shape,
+
+              });
+              marker.setMap(map);
+          }
+  var marker = new google.maps.Marker({
+    position: myLatLng,
+    map: map,
+    title: 'Hello World!'
+  });
+}
+
 
       function geocodeLatLng(geocoder, map, infowindow) {
         var input = document.getElementById('latlng').value;

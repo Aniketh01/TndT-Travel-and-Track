@@ -18,7 +18,8 @@ from django.contrib import admin
 
 
 
-from dashboard.views import dashboard, mapinteg
+from dashboard.views import dashboard
+from flighttracker.views import mapinteg
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
