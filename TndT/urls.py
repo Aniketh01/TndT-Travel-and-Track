@@ -18,14 +18,14 @@ from django.contrib import admin
 
 
 
-from dashboard.views import dashboard
-
+from dashboard.views import dashboard, mapinteg
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^userauth/', include('userauth.urls')),
     url(r'^home/', include('home.urls')),
     url(r'^$', include('home.urls')),
-    url(r'^dashboard/', dashboard, name='dashboard'),
+    url(r'^dashboard/$', dashboard, name='dashboard'),
+    url(r'^dashboard/map/$', mapinteg, name='map'),
 
 ]
